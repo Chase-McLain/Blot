@@ -8,16 +8,24 @@ import { generateId } from "../utils/GenerateId.js";
 
 export class blot {
   constructor(data) {
-    this.id = generateId()
+    this.id = data.id || generateId()
     this.title = data.title
     this.color = data.color
-    this.body = data.body
+    this.body = data.body || ''
     this.createdDate = data.createdDate
     this.updatedDate = data.updatedDate
   }
 
 
-
+  get blotTemplate() {
+    return `
+    <div onclick="app.BlotController.selectBlot()" style="border-color:${this.color};" class="blots mx-2 my-1 p-1">
+      <h4 class="pb-0 mb-0">${this.title}</h4>
+      <p class="pb-0 mb-0">Created on: ${this.createdDate}</p>
+      <p class="pb-0 mb-0">Last update:${this.updatedDate}</p>
+    </div>
+    `
+  }
 
 
 

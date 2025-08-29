@@ -31,6 +31,11 @@ nav {
   border-radius: 10px;
 }
 
+.blots {
+  border: inset 6px;
+  -webkit-text-fill-color: black;
+}
+
 .blot-zone {
   background-color: rgba(128, 0, 128, 0.773);
   border: inset 7px rgb(122, 52, 147);

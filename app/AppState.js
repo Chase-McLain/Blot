@@ -29,6 +29,12 @@ class ObservableAppState extends EventEmitter {
       updatedDate: ''
     })
   ]
+
+  activeBlot = null
+
+
+
+
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())
