@@ -42,6 +42,10 @@ nav {
   border-radius: 10px;
 }
 
+.active-blot {
+  border: inset 10px;
+}
+
 .splatter {
   min-width: 500px;
   min-height: 470px;
