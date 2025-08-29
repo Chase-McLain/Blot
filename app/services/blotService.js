@@ -27,6 +27,10 @@ class BlotService {
     this.saveBlotState()
   }
 
+  blotCounter() {
+
+  }
+
   saveBlot(form) {
     // console.log(form)
     const activeBlot = AppState.activeBlot

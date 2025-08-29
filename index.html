@@ -30,7 +30,10 @@
   <main class="container pt-5 pb-5 gap-4">
     <section class="row"></section>
     <div class="col-md-4 blot-selector">
-      <h4 class="text-black">Blot it up</h4>
+      <h4 class="text-black mb-0">Blot it up</h4>
+      <span id="blot-counter">
+        <small class="text-black">Blots:</small>
+      </span>
       <form onsubmit="app.BlotController.createBlot()">
         <div class="">
           <input id="blot-color" type="color" name="color" class="">

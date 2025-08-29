@@ -11,8 +11,10 @@ export class blotController {
   constructor() {
     // console.log('blot')
     this.drawBlotSelector()
+    this.drawBlotSelector()
     AppState.on('blots', this.drawBlotSelector)
     AppState.on('activeBlot', this.drawActiveBlot)
+    AppState.on('blots', this.drawBlotCounter)
     // blotservice.saveBlotState()
     blotservice.loadBlotState()
 
@@ -44,6 +46,14 @@ export class blotController {
         </div>`
 
   }
+
+  drawBlotCounter() {
+    let blotCounterElement = document.getElementById('blot-counter')
+    let blotTotal = AppState.blots.length
+    blotCounterElement.innerHTML = `<small class="text-black">Blots: ${blotTotal}</small>`
+
+  }
+
 
 
   selectBlot(blotId) {
