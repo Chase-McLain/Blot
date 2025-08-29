@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js"
 import { blotservice } from "../services/blotService.js"
+import { getFormData } from "../utils/FormHandler.js"
 
 
 
@@ -10,8 +11,10 @@ export class blotController {
   constructor() {
     // console.log('blot')
     this.drawBlotSelector()
+    AppState.on('blots', this.drawBlotSelector)
     AppState.on('activeBlot', this.drawActiveBlot)
-
+    // blotservice.saveBlotState()
+    blotservice.loadBlotState()
 
   }
 
@@ -37,7 +40,7 @@ export class blotController {
       activeBlotElement.innerHTML = `<div class="text-center">
         <h2 class="text-black">The Blot Zone</h2>
         <div>
-          <img class="img-fluid mt-3 splatter" src="assets\img\black-paint-splatter.png" alt="splatter">
+          <img class="img-fluid mt-3 splatter" src="./assets/img/black-paint-splatter.png" alt="splatter">
         </div>`
 
   }
@@ -50,6 +53,32 @@ export class blotController {
   }
 
 
+  createBlot() {
+    // console.log('blot')
+    event.preventDefault()
+    const submittedForm = event.target
+    const blotData = getFormData(submittedForm)
+    blotservice.createBlot(blotData)
+    submittedForm.reset()
+  }
+
+  saveBlot() {
+    // console.log('blot')
+    event.preventDefault()
+    let formBody = event.target
+    let form = getFormData(formBody)
+    blotservice.saveBlot(form)
+  }
+
+
+  deleteBlot(blotid) {
+    console.log('blot')
+    const confirmed = window.confirm('Are you sure you wish to delete this Blot?')
+    if (!confirmed) {
+      return
+    }
+    blotservice.deleteBlot(blotid)
+  }
 
 
 }

@@ -31,10 +31,10 @@
     <section class="row"></section>
     <div class="col-md-4 blot-selector">
       <h4 class="text-black">Blot it up</h4>
-      <form action="">
+      <form onsubmit="app.BlotController.createBlot()">
         <div class="">
-          <input type="color" class="">
-          <input type="text" class="w-50 ms-2">
+          <input id="blot-color" type="color" name="color" class="">
+          <input id="blot-title" type="text" minlength="3" maxlength="16" required name="title" class="w-50 ms-2">
           <button class="btn btn-info p-1 ms-2">BLOT <span class="mdi mdi-pen-plus"></span></button>
         </div>
       </form>
