@@ -1,0 +1,51 @@
+/* BASIC STYLES HERE */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(../img/rainbow-cavern.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+
+}
+
+nav {
+  background-image: url(../img/rainbow.png);
+  font-family: "Arizonia", cursive;
+  font-weight: 400;
+  font-style: normal;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blot-selector {
+  background-color: rgba(128, 0, 128, 0.773);
+  border: inset 7px rgb(122, 52, 147);
+  border-radius: 10px;
+}
+
+.blot-zone {
+  background-color: rgba(128, 0, 128, 0.773);
+  border: inset 7px rgb(122, 52, 147);
+  border-radius: 10px;
+}
+
+.splatter {
+  min-width: 500px;
+  min-height: 400px;
+}
+
+footer {
+  background-image: url(../img/rainbow.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-text-fill-color: black;
+}
